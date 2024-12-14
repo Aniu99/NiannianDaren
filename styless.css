@@ -1,0 +1,292 @@
+
+
+body {
+background-color: #f7c7d4;
+	display: block;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#cake {
+  opacity: 0;  /* 初始状态下不可见 */
+  visibility: hidden;  /* 确保元素不占据空间 */
+  transition: opacity 1s ease-out;
+  display: none;  /* 确保元素不占据空间 */
+  position: relative;
+  margin-top: -10em;
+  margin-bottom: 0px;
+  margin-left: 42.5%;
+}
+
+/* 蛋糕相关的其他元素 */
+#bizcocho_3, #relleno_2, #bizcocho_2, #relleno_1, #bizcocho_1, #crema {
+  opacity: 0;
+  visibility: hidden;  /* 确保这些元素不会占据空间 */
+  transition: opacity 1s ease-out;
+}
+
+#cake.show {
+  display: block;  /* 显示蛋糕 */
+  opacity: 1;  /* 让蛋糕渐显 */
+  visibility: visible;  /* 可见 */
+}
+
+/* ============================================== Candle
+*/
+/* 初始化时隐藏蜡烛和火焰 */
+.velas, .fuego {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+}
+
+/* 显示时的动画 */
+.velas.appear {
+  display: block;  /* 显示蜡烛 */
+  animation: in 500ms ease-out forwards;
+}
+
+.fuego.appear {
+  display: block;  /* 显示火焰 */
+  animation: fuegoAnim 2s infinite;
+}
+
+/* 蛋糕的渐变显示效果 */
+@keyframes in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 火焰的动画效果 */
+@keyframes fuegoAnim {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+.velas {
+  background: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  top: 247px;
+  margin-left: 90%;
+  width: 5px;
+  height: 35px;
+  transform: translateY(-300px);  /* 初始位置不占空间 */
+  backface-visibility: hidden;
+  animation: in 500ms 6s ease-out forwards;
+}
+
+.velas:after,
+.velas:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
+
+.velas:after {
+  top: 25%;
+  left: 0;
+}
+
+.velas:before {
+  top: 45%;
+  left: 0;
+}
+
+/* 火焰样式 */
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 5%;
+  width: 6.66666667px;
+  height: 18px;
+  transform: translateY(-300px);  /* 初始位置不占空间 */
+}
+
+.fuego:nth-child(1) {
+  animation: fuego 2s 6.5s infinite;
+}
+
+.fuego:nth-child(2) {
+  animation: fuego 1.5s 6.5s infinite;
+}
+
+.fuego:nth-child(3) {
+  animation: fuego 1s 6.5s infinite;
+}
+
+.fuego:nth-child(4) {
+  animation: fuego 0.5s 6.5s infinite;
+}
+
+.fuego:nth-child(5) {
+  animation: fuego 0.2s 6.5s infinite;
+}
+
+/* 火焰动画效果 */
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes coming {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes coming {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #ffe6f7;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff66b2;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            margin-top: 50px;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background-color: #ff6666;
+            border-radius: 50%;
+            animation: floatBalloon 6s ease-in infinite;
+        }
+
+        .balloon:nth-child(1) { left: 10%; animation-duration: 7s; }
+        .balloon:nth-child(2) { left: 30%; animation-duration: 8s; }
+        .balloon:nth-child(3) { left: 50%; animation-duration: 6s; }
+        .balloon:nth-child(4) { left: 70%; animation-duration: 9s; }
+        .balloon:nth-child(5) { left: 90%; animation-duration: 7s; }
+
+        @keyframes floatBalloon {
+            0% { bottom: -100px; transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-200px) rotate(10deg); }
+            100% { bottom: 100vh; transform: translateY(-300px) rotate(-10deg); }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffcc00;
+            animation: confettiFall 4s ease-in-out infinite;
+        }
+
+        @keyframes confettiFall {
+            0% { opacity: 1; transform: translateY(-50px) rotate(0deg); }
+            100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .cake {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #fff 60%, #ff66b2 100%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: cakeBlink 1s infinite alternate;
+        }
+
+        @keyframes cakeBlink {
+            0% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .cake::after {
+            content: "🎂";
+            font-size: 4em;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+            animation: starTwinkle 1.5s infinite alternate;
+        }
+
+        @keyframes starTwinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.5); }
+        }
+
+        /* Add a button to toggle celebration elements */
+        #toggleButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        #toggleButton:hover {
+            background-color: #ff3385;
+        }
+
+
