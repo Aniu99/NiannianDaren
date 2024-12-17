@@ -59,7 +59,7 @@ function kethalo(){
     new TypeIt("#halo", { // 使用 TypeIt 插件对 #halo 元素进行动态输入
         strings: ["" + vketikhalo], // 输入的文本内容
         startDelay: 50, // 开始延迟 50ms
-        speed: 40, // 输入速度为 40ms/字符
+        speed: 80, // 输入速度为 40ms/字符
         waitUntilVisible: true, // 等待元素可见后再开始输入
         afterComplete: function(){
             halo.innerHTML = vketikhalo; // 输入完成后将文本显示在元素中
@@ -105,9 +105,9 @@ function mulaiketik1(){
     new TypeIt("#kalimat", {
         strings: ["" + vketik1], // 输入的文本内容
         startDelay: 400, // 开始延迟 400ms
-        speed: 20, // 输入速度
+        speed: 65, // 输入速度
         cursor: false, // 不显示光标
-        deleteSpeed: 20, // 删除速度
+        deleteSpeed: 40, // 删除速度
         breakLines: false, // 不换行
         waitUntilVisible: true, // 等待元素可见后再输入
         lifelike: true, // 模拟真实输入
@@ -178,9 +178,9 @@ function aktipesan2(){
     new TypeIt("#kalimat", {
         strings: ["" + vketik2], // 输入的字符串为消息 2 的内容
         startDelay: 20, // 延迟 20ms 后开始
-        speed: 40, // 输入速度
+        speed: 70, // 输入速度
         cursor: true, // 显示光标
-        deleteSpeed: 50, // 删除速度
+        deleteSpeed: 100, // 删除速度
         breakLines: false, // 不自动换行
         waitUntilVisible: true, // 等待元素可见后才输入
         lifelike: true, // 模拟自然输入
@@ -205,14 +205,14 @@ function aktipesan3(){
     new TypeIt("#pesan3", {
         strings: ["" + vketik3], // 输入的字符串为消息 3 的内容
         startDelay: 1, // 延迟 1ms 后开始
-        speed: 45, // 输入速度
+        speed: 80, // 输入速度
         cursor: true, // 显示光标
         waitUntilVisible: true, // 等待元素可见后输入
         lifelike: true, // 模拟自然输入
         afterComplete: function(){
             pesan3.innerHTML = vketik3; // 输入完成后设置文本
-            setTimeout(otomatis, 600); // 延时 600ms 后调用自动化函数
-            setTimeout(aktipesan4, 1010); // 延时 1010ms 后调用 aktipesan4 函数
+            setTimeout(otomatis, 1500); // 延时 600ms 后调用自动化函数
+            setTimeout(aktipesan4, 1910); // 延时 1010ms 后调用 aktipesan4 函数
         },
     }).go();
 }
@@ -238,7 +238,7 @@ function aktipesan5(){
     new TypeIt("#pesan5", {
         strings: ["" + vketik5], // 输入的字符串为消息 5 的内容
         startDelay: 1, // 延迟 1ms 后开始
-        speed: 52, // 输入速度
+        speed: 90, // 输入速度
         cursor: true, // 显示光标
         waitUntilVisible: true, // 等待元素可见后输入
         lifelike: true, // 模拟自然输入
@@ -259,7 +259,7 @@ function aktipesan6(){
     new TypeIt("#pesan6", {
         strings: ["" + vketik6], // 输入的字符串为消息 6 的内容
         startDelay: 1, // 延迟 1ms 后开始
-        speed: 52, // 输入速度
+        speed: 90, // 输入速度
         cursor: true, // 显示光标
         waitUntilVisible: true, // 等待元素可见后输入
         lifelike: true, // 模拟自然输入
@@ -283,7 +283,7 @@ function aktipesan7(){
     new TypeIt("#pesan7", {
         strings: ["" + vketik7], // 输入的字符串为消息 7 的内容
         startDelay: 1, // 延迟 1ms 后开始
-        speed: 52, // 输入速度
+        speed: 90, // 输入速度
         cursor: true, // 显示光标
         waitUntilVisible: true, // 等待元素可见后输入
         lifelike: true, // 模拟自然输入
@@ -318,19 +318,19 @@ function aktipesan8(){
     // 使用 TypeIt 插件显示消息 8 和 9
     new TypeIt("#pesan8", {
         strings: ["" + vketik8, "" + vketik9, "" + vketik10], // 输入的字符串为消息 8 和 9 的内容
-        startDelay: 20, // 延迟 20ms 后开始
-        speed: 45, // 输入速度
+        startDelay: 80, // 延迟 20ms 后开始
+        speed: 90, // 输入速度
         cursor: true, // 显示光标
-        deleteSpeed: 30, // 删除速度
+        deleteSpeed: 60, // 删除速度
         breakLines: false, // 不自动换行
         waitUntilVisible: true, // 等待元素可见后输入
         lifelike: true, // 模拟自然输入
         afterComplete: function(){
             pesan8.innerHTML = vketik9; // 输入完成后设置消息 8
             pesan8.innerHTML = vketik10; // 输入完成后设置消息 8
-            setTimeout(otomatis, 1300); // 延时 1300ms 后调用自动化函数
-            setTimeout(aktipesan11, 1710); // 延时 1710ms 后调用 aktipesan11 函数
-            setTimeout(startCakeAnimation, 2000); // 延时 1710ms 后调用 aktipesan11 函数
+            setTimeout(otomatis, 2600); // 延时 1300ms 后调用自动化函数
+            setTimeout(aktipesan11, 3010); // 延时 1710ms 后调用 aktipesan11 函数
+            setTimeout(startCakeAnimation, 3300); // 延时 1710ms 后调用 aktipesan11 函数
         },
     }).go();
 }
@@ -450,7 +450,7 @@ async function pertanyaan() {
     if (prtanya) { // 用户点击确认按钮
         await swalst.fire({
             title: '' + katatambahan.innerHTML, // 显示额外的文字
-            timer: 2000, // 显示时间为 2 秒
+            timer: 2500, // 显示时间为 2 秒
             imageUrl: '' + stikerditolak.src, // 相关图片
         });
         vketik8 = vketik81; // 恢复 vketik8 内容
@@ -458,7 +458,7 @@ async function pertanyaan() {
     } else { // 用户点击取消按钮
         await swalst.fire({
             title: '' + kataditolak.innerHTML, // 显示拒绝的文字
-            timer: 2000, // 显示时间为 2 秒
+            timer: 2500, // 显示时间为 2 秒
             imageUrl: '' + stikerditolak.src, // 相关图片
         });
         vketik8 = ""; // 清空 vketik8 内容
