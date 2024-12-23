@@ -72,7 +72,7 @@ function kethalo(){
 function tombol(){
     wallpaper.style="transform: scale(1);"; // 恢复背景图的正常缩放比例
     Tombol.style="opacity:1;transform: scale(1);"; // 设置按钮显示，透明度为1，正常缩放
-    if(fungsi==2){By.innerHTML="&#128140; 收下你的专属小蛋糕红包吧！🤩"} // 如果 fungsi 为 2，按钮内容改为 "Balas"
+    if(fungsi==2){By.innerHTML="&#128140; 收下需要跑腿的专属礼物吧！🤩"} // 如果 fungsi 为 2，按钮内容改为 "Balas"
 }
 
 // 监听按钮点击事件
